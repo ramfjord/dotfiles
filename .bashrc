@@ -9,6 +9,9 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias vim=nvim
 alias startx='ssh-agent startx'
+
+# See https://wiki.archlinux.org/title/Dotfiles
+alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 EDITOR=nvim
@@ -21,7 +24,7 @@ PROMPT_COMMAND='hasjobs=$(jobs -p)'
 PS1='\e[2m\A\e[0m \w \e[101m${hasjobs:+\j}\e[0m${hasjobs:+ }$ '
 
 # Nix path
-alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+PATH="$PATH:$HOME/.nix-profile/bin"
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"

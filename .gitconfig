@@ -1,0 +1,8 @@
+[alias]
+	st = status --short
+	co = checkout
+	cm = commit
+  lg = log --all --decorate --graph --oneline
+[user]
+	email = thomas.ramfjord@gmail.com
+	name = Thomas Ramfjord
