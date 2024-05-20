@@ -23,10 +23,13 @@ MANPAGER='nvim +Man!'
 PROMPT_COMMAND='hasjobs=$(jobs -p)'
 PS1='\e[2m\A\e[0m \w \e[101m${hasjobs:+\j}\e[0m${hasjobs:+ }$ '
 
-# Nix path
+# Nix path - after normal path locations
 PATH="$PATH:$HOME/.nix-profile/bin"
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# Rupa z
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
