@@ -18,6 +18,9 @@ EDITOR=nvim
 PAGER=less
 MANPAGER='nvim +Man!'
 
+HISTSIZE=9999
+HISTFILESIZE=999999
+
 # Custom PS1
 # PS1='[\u@\h \W]\$ '
 PROMPT_COMMAND='hasjobs=$(jobs -p)'
