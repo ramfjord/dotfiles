@@ -1,3 +1,4 @@
 pulseaudio --start
 setxkbmap -option caps:swapescape
-exec awesome
+dex -a
+exec i3
