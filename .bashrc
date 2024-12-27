@@ -27,7 +27,11 @@ PROMPT_COMMAND='hasjobs=$(jobs -p)'
 PS1='\e[2m\A\e[0m \w \e[101m${hasjobs:+\j}\e[0m${hasjobs:+ }$ '
 
 # Nix path - after normal path locations
-PATH="$PATH:$HOME/.nix-profile/bin"
+# PATH="$PATH:$HOME/.nix-profile/bin"
+
+# Rubygem path stuff
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="$PATH:$GEM_HOME/bin"
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
