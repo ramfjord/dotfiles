@@ -5,16 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias vim=nvim
-alias startx='ssh-agent startx'
-
-# See https://wiki.archlinux.org/title/Dotfiles
-alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
-
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 [ "$TERM" = "xterm-kitty" ] && export TERM=xterm
+
+source ~/.aliases.sh
 
 EDITOR=nvim
 PAGER=less
