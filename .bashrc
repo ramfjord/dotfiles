@@ -16,11 +16,12 @@ MANPAGER='nvim +Man!'
 
 HISTSIZE=9999
 HISTFILESIZE=999999
+CHROOT=$HOME/chroot
 
 # Custom PS1
 # PS1='[\u@\h \W]\$ '
 PROMPT_COMMAND='hasjobs=$(jobs -p)'
-PS1='\e[2m\A\e[0m \h:\w \e[101m${hasjobs:+\j}\e[0m${hasjobs:+ }$ '
+PS1='\[\e[2m\]\A\[\e[0m\] \h:\w \[\e[101m\]${hasjobs:+\j}\[\e[0m${hasjobs:+ }\]$ '
 
 # Nix path - after normal path locations
 # PATH="$PATH:$HOME/.nix-profile/bin"
