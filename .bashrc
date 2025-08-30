@@ -5,6 +5,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# for shared connections by ssh
+if [[ -z "${SSH_CONNECTION}" ]]; then
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
+
+export PATH="$PATH:$HOME/scripts"
+
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 [ "$TERM" = "xterm-kitty" ] && export TERM=xterm
 
