@@ -26,14 +26,18 @@ PS1='\[\e[2m\]\A\[\e[0m\] \h:\w \[\e[101m\]${hasjobs:+\j}\[\e[0m${hasjobs:+ }\]$
 # Nix path - after normal path locations
 # PATH="$PATH:$HOME/.nix-profile/bin"
 
-# Rubygem path stuff
-export GEM_HOME="$(gem env user_gemhome)"
-export PATH="$PATH:$GEM_HOME/bin"
+# Ruby dev environment
+if which gem >/dev/null 2>&1; then
+  export GEM_HOME="$(gem env user_gemhome)"
+  export PATH="$PATH:$GEM_HOME/bin"
+fi
 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# Python dev environment
+if which pyenv >/dev/null 2>&1; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
 
-# Rupa z
+# Rupa z helps jump around directories
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
